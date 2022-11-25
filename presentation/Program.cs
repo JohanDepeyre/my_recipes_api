@@ -15,8 +15,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<IRecetteManager, RecetteManager>();
-
+builder.Services.AddScoped<IEtapeManager, EtapeManager>();
+builder.Services.AddScoped<ICategorieManager, CategorieManager>();
 builder.Services.AddScoped<IRecetteRepository, RecetteRepository>();
+builder.Services.AddScoped<IEtapeRepository, EtapeRepository>();
+builder.Services.AddScoped <ICategorieRepository, CategorieRepository>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
                     options.UseSqlServer("Server=DESKTOP-BRDLEPQ\\SQLEXPRESS;Database=my_recipes;Trusted_Connection=True;TrustServerCertificate=True;"));

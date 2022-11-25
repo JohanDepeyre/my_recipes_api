@@ -8,11 +8,13 @@ namespace Data.Model
 {
     public class Recette
     {
-        public Recette()
-        {
-        }
-        public int Id { get; set; }
-        public string NameRecette { get; set; } = null!;
+   
+        public int RecetteId { get; set; }
+        public string TitreRecette { get; set; } 
         public string? DescriptionRecette { get; set; }
+        public DateTime DateTimeRecette { get; set; }
+
+        public int CategorieId { get; set; }
+        public Categorie categorie { get; set; }
     }
 }

@@ -15,9 +15,9 @@ namespace Application.Managers
     {
         private IRecetteRepository RecetteRepository { get; }
         private IMapper Mapper { get; }
-        public RecetteManager(IRecetteRepository categoryRepository, IMapper mapper)
+        public RecetteManager(IRecetteRepository recetteRepository, IMapper mapper)
         {
-            this.RecetteRepository = categoryRepository;
+            this.RecetteRepository = recetteRepository;
             this.Mapper = mapper;
         }
 

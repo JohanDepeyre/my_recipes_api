@@ -12,5 +12,6 @@ namespace Application.Managers.Interfaces
         RecetteDto CreateRecette(RecetteDto category);
         IEnumerable<RecetteDto> GetRecette();
         RecetteDto GetRecetteById(int categoryId);
+
     }
 }

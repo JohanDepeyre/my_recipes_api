@@ -12,16 +12,30 @@ public class RecetteProfile : Profile
     public RecetteProfile()
     {
         CreateMap<RecetteDto, Recette>()
-            .ForMember(dest => dest.NameRecette,
-            opt => opt.MapFrom(src => src.Name))
+            .ForMember(dest => dest.TitreRecette,
+            opt => opt.MapFrom(src => src.TitreRecette))
              .ForMember(dest => dest.DescriptionRecette,
-            opt => opt.MapFrom(src => src.Description))
-            .ForMember(dest => dest.Id,
+            opt => opt.MapFrom(src => src.DescriptionRecette))
+              .ForMember(dest => dest.DateTimeRecette,
+            opt => opt.MapFrom(src => src.DateRecette))
+               .ForMember(dest => dest.categorie,
+            opt => opt.MapFrom(src => src.categorie))
+            .ForMember(dest => dest.CategorieId,
+            opt => opt.MapFrom(src => src.CategorieId))
+
+            .ForMember(dest => dest.RecetteId,
             opt => opt.Ignore());
         CreateMap<Recette, RecetteDto>()
-            .ForMember(dest => dest.Name,
-            opt => opt.MapFrom(src => src.NameRecette))
-            .ForMember(dest => dest.Description,
-            opt => opt.MapFrom(src => src.DescriptionRecette));
+            .ForMember(dest => dest.TitreRecette,
+            opt => opt.MapFrom(src => src.TitreRecette))
+            .ForMember(dest => dest.DescriptionRecette,
+            opt => opt.MapFrom(src => src.DescriptionRecette))
+            .ForMember(dest => dest.DateRecette,
+            opt => opt.MapFrom(src => src.DateTimeRecette))
+               .ForMember(dest => dest.categorie,
+            opt => opt.MapFrom(src => src.categorie))
+            .ForMember(dest => dest.CategorieId,
+            opt => opt.MapFrom(src => src.CategorieId));
+
     }
 }

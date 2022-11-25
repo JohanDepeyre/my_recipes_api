@@ -14,9 +14,9 @@ namespace Data.Data
 {
     public class ApplicationDbContext : DbContext
     {
-      
+        public DbSet<Categorie> Categories { get; set; }
         public DbSet<Recette> Recettes { get; set; }
-
+        public DbSet<Etape> Etapes { get; set; }
         public ApplicationDbContext(DbContextOptions options)
             : base(options)
         {

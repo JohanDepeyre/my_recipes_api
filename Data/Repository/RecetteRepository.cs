@@ -26,7 +26,7 @@ namespace Data.Repository
 
         public Recette GetRecetteById(int recetteId)
         {
-            return DbContext.Recettes.FirstOrDefault(x => x.Id.Equals(recetteId));
+            return DbContext.Recettes.FirstOrDefault(x => x.RecetteId.Equals(recetteId));
         }
 
         public Recette CreateRecette(Recette recette)

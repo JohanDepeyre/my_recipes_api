@@ -1,4 +1,6 @@
-﻿namespace Application.DTO
+﻿using Data.Model;
+
+namespace Application.DTO
 {
     public class RecetteDto
     {
@@ -6,7 +8,12 @@
         {
         }
 
-        public string Name { get; set; } = null!;
-        public string? Description { get; set; }
+        public int RecetteId { get; set; }
+        public string TitreRecette { get; set; }
+        public string? DescriptionRecette { get; set; }
+        public DateOnly DateRecette { get; set; }
+
+        public int CategorieId { get; set; }
+        public Categorie categorie { get; set; }
     }
 }
