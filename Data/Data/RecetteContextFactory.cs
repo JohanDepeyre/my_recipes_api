@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Data.Data;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
@@ -21,7 +22,6 @@ namespace Data.Data
             configurationBuilder.AddJsonFile(Path.Combine(Directory.GetCurrentDirectory(), "Setting", "appsetting.json"));
             IConfigurationRoot configurationRoot = configurationBuilder.Build();
             DbContextOptionsBuilder builder = new DbContextOptionsBuilder();
-
 
             builder.UseSqlServer(configurationRoot.GetConnectionString("DefaultConnection"));
             ApplicationDbContext context = new ApplicationDbContext(builder.Options);

@@ -1,10 +1,12 @@
 using Application.Managers;
 using Application.Managers.Interfaces;
 using Data.Data;
+using Data.Model;
 using Data.Repository;
 using Data.Repository.Interfaces;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.AspNetCore.Identity;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -23,6 +25,9 @@ builder.Services.AddScoped <ICategorieRepository, CategorieRepository>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
                     options.UseSqlServer("Server=DESKTOP-BRDLEPQ\\SQLEXPRESS;Database=my_recipes;Trusted_Connection=True;TrustServerCertificate=True;"));
+
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

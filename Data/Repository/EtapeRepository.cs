@@ -1,12 +1,16 @@
 ﻿using Data.Data;
 using Data.Model;
 using Data.Repository.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Collections.Specialized.BitVector32;
 
 namespace Data.Repository
 {
@@ -21,6 +25,9 @@ namespace Data.Repository
         public Etape CreateEtape(Etape etape)
         {
             DbContext.Etapes.Add(etape);
+         
+            DbContext.Entry(etape.recette).State =EntityState.Unchanged;
+
             DbContext.SaveChanges();
             return etape;
             
@@ -33,7 +40,7 @@ namespace Data.Repository
 
         public IEnumerable<Etape> GetEtape(int recetteId)
         {
-            return DbContext.Etapes.ToList().OrderBy(x => x.EtapeId).Where(x => x.IdRecette == recetteId); ;
+            return DbContext.Etapes.Include(x=>x.recette).ToList().OrderBy(x => x.EtapeId).Where(x => x.RecetteId == recetteId); ;
         }
 
         public Etape GetEtapeById(int etapeId)

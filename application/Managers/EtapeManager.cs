@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 
 namespace Application.Managers
 {
+
     public class EtapeManager : IEtapeManager
     {
         private IEtapeRepository EtapeRepository { get; }

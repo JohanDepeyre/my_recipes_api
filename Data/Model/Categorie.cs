@@ -10,6 +10,6 @@ namespace Data.Model
     {
         public int CategorieId { get; set; }
         public string Titre { get; set; }
-        public List<Recette> Recettes { get; set; }
+        //public List<Recette> Recettes { get; set; }
     }
 }

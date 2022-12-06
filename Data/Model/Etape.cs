@@ -12,7 +12,7 @@ namespace Data.Model
         public string Titre { get; set; }
         public int TempsEtape { get; set; }
         public string Description { get; set; }
-        public int IdRecette { get; set; }
+        public int RecetteId { get; set; }
         public Recette recette { get; set; }
 
     }

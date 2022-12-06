@@ -20,14 +20,14 @@ namespace Presentation.Controllers
             return RecetteManager.GetRecette();
         }
         [HttpGet("{recetteId:int}")]
-        public RecetteDto GetRecetteById(int recetteId)
+        public RecetteDto GetRecetteById([FromQuery]int recetteId)
         {
             return RecetteManager.GetRecetteById(recetteId);
         }
         [HttpPost]
-        public RecetteDto PostRecette([FromBody] RecetteDto category)
+        public RecetteDto PostRecette( RecetteDto recette)
         {
-            return RecetteManager.CreateRecette(category);
+            return RecetteManager.CreateRecette(recette);
         }
     }
 }

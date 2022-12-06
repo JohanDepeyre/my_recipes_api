@@ -18,8 +18,7 @@ public class RecetteProfile : Profile
             opt => opt.MapFrom(src => src.DescriptionRecette))
               .ForMember(dest => dest.DateTimeRecette,
             opt => opt.MapFrom(src => src.DateRecette))
-               .ForMember(dest => dest.categorie,
-            opt => opt.MapFrom(src => src.categorie))
+          
             .ForMember(dest => dest.CategorieId,
             opt => opt.MapFrom(src => src.CategorieId))
 
@@ -31,10 +30,8 @@ public class RecetteProfile : Profile
             .ForMember(dest => dest.DescriptionRecette,
             opt => opt.MapFrom(src => src.DescriptionRecette))
             .ForMember(dest => dest.DateRecette,
-            opt => opt.MapFrom(src => src.DateTimeRecette))
-               .ForMember(dest => dest.categorie,
-            opt => opt.MapFrom(src => src.categorie))
-            .ForMember(dest => dest.CategorieId,
+          
+           
             opt => opt.MapFrom(src => src.CategorieId));
 
     }

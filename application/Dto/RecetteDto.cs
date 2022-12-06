@@ -11,9 +11,9 @@ namespace Application.DTO
         public int RecetteId { get; set; }
         public string TitreRecette { get; set; }
         public string? DescriptionRecette { get; set; }
-        public DateOnly DateRecette { get; set; }
+        public DateTime DateRecette { get; set; }
 
         public int CategorieId { get; set; }
-        public Categorie categorie { get; set; }
+     
     }
 }

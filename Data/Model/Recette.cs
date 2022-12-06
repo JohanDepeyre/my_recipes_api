@@ -15,6 +15,6 @@ namespace Data.Model
         public DateTime DateTimeRecette { get; set; }
 
         public int CategorieId { get; set; }
-        public Categorie categorie { get; set; }
+  
     }
 }

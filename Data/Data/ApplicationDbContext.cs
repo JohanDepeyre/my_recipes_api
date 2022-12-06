@@ -1,29 +1,29 @@
 ﻿using Data.Model;
 
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-
-
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.EntityFrameworkCore;
 namespace Data.Data
 {
     public class ApplicationDbContext : DbContext
     {
-        public DbSet<Categorie> Categories { get; set; }
-        public DbSet<Recette> Recettes { get; set; }
-        public DbSet<Etape> Etapes { get; set; }
+      
         public ApplicationDbContext(DbContextOptions options)
             : base(options)
         {
+           
         }
 
         public ApplicationDbContext()
         {
+
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -33,7 +33,9 @@ namespace Data.Data
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
         }
-      
+        public DbSet<Categorie> Categories { get; set; }
+        public DbSet<Recette> Recettes { get; set; }
+        public DbSet<Etape> Etapes { get; set; }
 
     }
 }
