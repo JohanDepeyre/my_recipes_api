@@ -1,17 +1,22 @@
 ﻿using Application.DTO;
 using Application.Managers.Interfaces;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Presentation.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes =JwtBearerDefaults.AuthenticationScheme)]
     public class RecetteController : Controller
     {
         private IRecetteManager RecetteManager { get; }
         public RecetteController(IRecetteManager recettemanager)
         {
             this.RecetteManager = recettemanager;
+
         }
 
         [HttpGet]

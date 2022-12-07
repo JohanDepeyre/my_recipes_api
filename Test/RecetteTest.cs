@@ -1,4 +1,4 @@
-using System.Data.Entity;
+
 using System.Net;
 using System.Net.Http;
 using System.Reflection.Metadata;
@@ -8,7 +8,7 @@ using Application.DTO;
 using Application.Managers.Interfaces;
 using Data.Data;
 using Data.Model;
-using Microsoft.AspNet.Identity;
+
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using Newtonsoft.Json;
