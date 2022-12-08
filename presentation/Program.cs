@@ -27,7 +27,7 @@ builder.Services.AddScoped<IEtapeRepository, EtapeRepository>();
 builder.Services.AddScoped <ICategorieRepository, CategorieRepository>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-                    options.UseSqlServer("Server=tcp:databaseapicuisine.database.windows.net,1433;Initial Catalog=recetteDB;Persist Security Info=False;User ID=loginAPI;Password=Cuisine2022+;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
+                    options.UseSqlServer(""));
 
 
 
