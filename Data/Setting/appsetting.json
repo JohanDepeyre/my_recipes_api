@@ -1,5 +1,5 @@
 ﻿{
   "ConnectionStrings": {
-    "DefaultConnection": "Server=DESKTOP-BRDLEPQ\\SQLEXPRESS;Database=my_recipes;Trusted_Connection=True;TrustServerCertificate=True;"
+    "DefaultConnection": "Server=tcp:databaseapicuisine.database.windows.net,1433;Initial Catalog=recetteDB;Persist Security Info=False;User ID=loginAPI;Password=Cuisine2022+;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
   }
 }

@@ -27,19 +27,20 @@ builder.Services.AddScoped<IEtapeRepository, EtapeRepository>();
 builder.Services.AddScoped <ICategorieRepository, CategorieRepository>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-                    options.UseSqlServer("Server=DESKTOP-BRDLEPQ\\SQLEXPRESS;Database=my_recipes;Trusted_Connection=True;TrustServerCertificate=True;"));
+                    options.UseSqlServer("Server=tcp:databaseapicuisine.database.windows.net,1433;Initial Catalog=recetteDB;Persist Security Info=False;User ID=loginAPI;Password=Cuisine2022+;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
 
-var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
-builder.Services.AddCors(options =>
+
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy(name: MyAllowSpecificOrigins,
+//                      policy =>
+//                      {
+//                          policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin(); 
+//                      });
+//});
+builder.Services.AddAuthentication(option =>
 {
-    options.AddPolicy(name: MyAllowSpecificOrigins,
-                      policy =>
-                      {
-                          policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://127.0.0.1:5500"); 
-                      });
-});
-builder.Services.AddAuthentication(option => {
     option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     option.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
     option.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -63,9 +64,14 @@ builder.Services.AddDefaultIdentity<IdentityUser>(option =>
 {
 
 }).AddEntityFrameworkStores<ApplicationDbContext>();
-var app = builder.Build();
 
-app.UseCors(MyAllowSpecificOrigins);
+var app = builder.Build();
+//using (var scope = app.Services.CreateScope())
+//{
+//    var dataContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+//    dataContext.Database.Migrate();
+//}
+//app.UseCors(MyAllowSpecificOrigins);
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
